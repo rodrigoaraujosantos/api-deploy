@@ -1,22 +1,64 @@
-![](https://i.imgur.com/xG74tOh.png)
+# E-Store API
 
-# Exercício de classe 🏫
+A "E-Store API" é uma aplicação completa e segura que oferece funcionalidades para gerenciar usuários, autenticação por JWT, operações de CRUD para produtos e uma conexão segura com um banco de dados SQL. A API foi projetada com a segurança em mente e é ideal para projetos de comércio eletrônico, sistemas de gerenciamento de produtos e muito mais.
 
-## Implementar Query Builder na API
+## Recursos Principais
 
-A API disponibilizada neste repositório foi desenvolvida utilizando a biblioteca `node-postgres` e todas as queries foram construidas manualmente (query bruta).
+- Cadastro seguro de usuários.
+- Autenticação de usuários através de tokens JWT.
+- Operações CRUD para produtos, permitindo criar, ler, atualizar e excluir informações de produtos.
+- Conexão segura com um banco de dados SQL.
+- Deploy do banco de dados no ElephantSQL.
+- Deploy do backend no Cyclic.
 
-A sua tarefa será substituir todas as queries criadas no projeto utilizando `Query Builder` com o `Knex.js` mantendo toda estrutura restante do projeto conforme foi desenvolvido.
+Para começar a utilizar a "E-Store API", siga estas etapas:
 
-Para as rotas de cadastro, deverá retornar um objeto com o registro criado contendo todos os campos da tabela, ao invés de retornar uma mensagem de cadastro com sucesso.
+1. Clone este repositório:
 
----
+```bash
+git clone https://github.com/seu-usuario/e-store-api.git
+cd e-store-api
+```
+2. Instale as dependências:
 
-Preencha a checklist para finalizar o exercício:
+```bash
+npm install
+```
+3. Configure as variáveis de ambiente em um arquivo .env na raiz do projeto. Exemplo:
 
--   [ ] Resolver o exercício revendo a aula se necessário
--   [ ] Adicionar as mudanças aos commits (`git add .` para adicionar todos os arquivos ou `git add nome_do_arquivo` para adicionar um arquivo específico)
--   [ ] Commitar a cada mudança significativa ou na finalização do exercício (`git commit -m "Mensagem do commit"`)
--   [ ] Pushar os commits no seu fork na origem (`git push origin nome-da-branch`)
+```bash
+JWT_SECRET=seu-segredo
+DB_HOST=seu-host
+DB_USER=seu-usuario
+DB_PASSWORD=sua-senha
+DB_DATABASE=seu-banco-de-dados
+```
+4. Inicie o servidor:
 
-###### tags: `back-end` `módulo 4` `nodeJS` `PostgreSQL` `API REST` `knex` `query builder`
+```bash
+npm start
+```
+
+O servidor estará em execução em http://localhost:3000.
+
+Rotas da API
+A "E-Store API" fornece as seguintes rotas:
+
+POST /api/auth/register: Rota para registro seguro de usuários.
+
+POST /api/auth/login: Rota para autenticação de usuários e geração de token JWT.
+
+GET /api/products: Rota para listar todos os produtos.
+
+GET /api/products/:id: Rota para obter informações de um produto específico.
+
+POST /api/products: Rota para adicionar um novo produto.
+
+PUT /api/products/:id: Rota para atualizar informações de um produto.
+
+DELETE /api/products/:id: Rota para excluir um produto.
+
+Certifique-se de revisar a documentação do código fonte para obter mais detalhes sobre o uso das rotas.
+
+Contribuindo
+Se você deseja contribuir para a "E-Store API", fique à vontade para criar um fork e enviar solicitações pull com melhorias ou correções de bugs.
